@@ -1,8 +1,9 @@
 import uuid
-from datetime import datetime
 
+from django.utils import timezone
 from django.db import models
 
+from apps.company.models import Company
 
 TRANSACTION_STATUS_CHOICES = [
     ('closed', 'Closed'),
@@ -14,9 +15,9 @@ TRANSACTION_STATUS_CHOICES = [
 # Create your models here.
 class Transaction(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    company_id = models.ForeignKey('apps.Company', on_delete=models.SET_NULL, null=True)
+    company_id = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.DateField(default=datetime.now())
+    date = models.DateField(default=timezone.now)
     status = models.CharField(
         max_length=20,
         choices=TRANSACTION_STATUS_CHOICES,

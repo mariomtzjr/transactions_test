@@ -2,3 +2,4 @@ django==3.2.12
 djangorestframework==3.13.1
 pandas==1.4.2
 ipython==8.3.0
+drf-spectacular==0.22.1

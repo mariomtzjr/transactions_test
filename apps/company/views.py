@@ -8,6 +8,8 @@ from .utils import build_instance_data
 
 # Create your views here.
 class CompaniesListAPIView(generics.ListAPIView):
+    """Returns the list of companies showing its name and status."""
+
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
 
@@ -19,6 +21,8 @@ class CompaniesListAPIView(generics.ListAPIView):
 
 
 class CompanyDetailAPIView(generics.RetrieveAPIView):
+    """Returns the detail of a company. Works with the company's id."""
+
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
     lookup_field = "id"

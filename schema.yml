@@ -1,0 +1,191 @@
+openapi: 3.0.3
+info:
+  title: Transactions API
+  version: 1.0.0
+  description: Transactions API example
+paths:
+  /api/v1/companies/:
+    get:
+      operationId: companies_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - companies
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCompanyList'
+          description: ''
+  /api/v1/companies/{uuid}:
+    get:
+      operationId: companies_retrieve
+      parameters:
+      - in: path
+        name: uuid
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - companies
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+          description: ''
+  /api/v1/sumary/:
+    get:
+      operationId: sumary_retrieve
+      description: A simple ViewSet for listing or retrieving users.
+      tags:
+      - sumary
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/v1/transactions/:
+    get:
+      operationId: transactions_list
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - transactions
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTransactionList'
+          description: ''
+components:
+  schemas:
+    Company:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        company_estatus:
+          $ref: '#/components/schemas/CompanyEstatusEnum'
+      required:
+      - id
+      - name
+    CompanyEstatusEnum:
+      enum:
+      - active
+      - inactive
+      type: string
+    PaginatedCompanyList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
+    PaginatedTransactionList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+    StatusTransactionEnum:
+      enum:
+      - closed
+      - reversed
+      - pending
+      type: string
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        company_id:
+          type: string
+          format: uuid
+          nullable: true
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        date:
+          type: string
+          format: date-time
+        status_transaction:
+          $ref: '#/components/schemas/StatusTransactionEnum'
+        status_approved:
+          type: boolean
+        final_payment:
+          type: boolean
+      required:
+      - id
+      - price
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

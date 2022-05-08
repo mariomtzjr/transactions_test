@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     'apps.transaction',
     'apps.company',
+    'apps.user',
+    'apps.address',
+    'apps.account',
 
     'rest_framework',
     'drf_spectacular',

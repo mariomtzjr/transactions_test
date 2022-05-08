@@ -1,14 +1,9 @@
-import uuid
-from collections import Counter
-
-from django.shortcuts import render, get_object_or_404
-
 from rest_framework import generics
 from rest_framework.response import Response
 
 from apps.company.models import Company
 from apps.company.serializers import CompanySerializer
-from apps.transaction.models import Transaction
+from .utils import build_instance_data
 
 
 # Create your views here.
@@ -31,25 +26,6 @@ class CompanyDetailAPIView(generics.RetrieveAPIView):
     
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
-        
-        instance_data = {}
-        instance_data["id"] = instance.id
-        instance_data["name"] = instance.name
-        instance_data["status"] = instance.company_estatus
-        
-        instance_data["transactions"] = {"data": {}}
-        instance_data["transactions"]["count"] = Transaction.objects.filter(company_id=instance.id).count()
-        instance_data["transactions"]["data"]["paid_payments"] = Transaction.objects.filter(company_id=instance.id, final_payment=True).count()
-        instance_data["transactions"]["data"]["no_paid_payments"] = Transaction.objects.filter(company_id=instance.id, final_payment=False).count()
-
-        transactions = Transaction.objects.filter(company_id=instance.id)
-  
-        dates = [transaction.date.strftime("%Y-%m-%d") for transaction in transactions]
-        max_transactions_per_day = max(Counter(dates), key = lambda k: Counter(dates)[k])
-        
-        instance_data["transactions"]["data"]["max_transactions_data"] = {
-            "date": max_transactions_per_day,
-            "count": dates.count(max_transactions_per_day)
-        }
+        instance_data = build_instance_data(instance)
 
         return Response(instance_data)

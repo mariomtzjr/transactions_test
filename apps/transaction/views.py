@@ -5,6 +5,7 @@ from rest_framework.response import Response
 
 from .models import Transaction
 from .serializers import TransactionSerializer
+from .utils import build_data
 
 
 # Create your views here.
@@ -20,4 +21,12 @@ class TransactionDetailViewSet(viewsets.ViewSet):
     def list(self, request):
         queryset = Transaction.objects.all()
         serializer = TransactionSerializer(queryset, many=True)
-        return Response(serializer.data)
+        
+        if self.request.query_params.get('top'):
+            top_number = int(self.request.query_params.get('top'))
+        else:
+            top_number = 5
+
+        data = build_data(top_number)
+
+        return Response(data)

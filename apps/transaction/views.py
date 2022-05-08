@@ -66,3 +66,14 @@ class TransactionsDetailViewSet(viewsets.ViewSet):
 
 
         return Response(data)
+
+
+class TransactionDetailAPIView(generics.RetrieveAPIView):
+    """Returns the detail of a transaction. Works with the transaction's id."""
+
+    queryset = Transaction.objects.all()
+    serializer_class = TransactionSerializer
+    lookup_field = "id"
+    lookup_url_kwarg = "uuid"
+
+    

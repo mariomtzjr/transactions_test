@@ -7,6 +7,7 @@ paths:
   /api/v1/companies/:
     get:
       operationId: companies_list
+      description: Returns the list of companies showing its name and status.
       parameters:
       - name: page
         required: false
@@ -30,6 +31,7 @@ paths:
   /api/v1/companies/{uuid}:
     get:
       operationId: companies_retrieve
+      description: Returns the detail of a company. Works with the company's id.
       parameters:
       - in: path
         name: uuid
@@ -48,12 +50,26 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Company'
+                $ref: '#/components/schemas/CompanyDetail'
           description: ''
   /api/v1/sumary/:
     get:
-      operationId: sumary_retrieve
-      description: A simple ViewSet for listing or retrieving users.
+      operationId: sumary_list
+      description: |-
+        A simple ViewSet for show sumary transactions data. This endpoint has enabled
+                top query_parameter to get N number of companies to show the most paid transactions.
+      parameters:
+      - in: query
+        name: top
+        schema:
+          type: integer
+        description: 'Filter by top N companies with the most paid transactions. Example:
+          /api/v1/sumary/?top=5'
+        examples:
+          Example1:
+            value: '5'
+            summary: Top 5 companies with the most paid transactions
+            description: Top 5 companies with the most paid transactions
       tags:
       - sumary
       security:
@@ -62,7 +78,35 @@ paths:
       - {}
       responses:
         '200':
-          description: No response body
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Summary'
+              examples:
+                Example1:
+                  value:
+                  - total_companies: 162
+                    total_transactions: 2654
+                    paid_payments:
+                      max_paid_payments:
+                        company_name: rappi
+                        paid_payments_number: 317
+                      count: 1393
+                    less_paid_payments:
+                      company_name: omgyes
+                      paid_payments_number: 1
+                    rejected_payments:
+                      max_rejected_transactions:
+                        company_name: uber eats
+                        rejected_transactions_number: 205
+                      count: 837
+                    total_price_approved: 1857116.0
+                    total_price_no_approved: 21685851.0
+                  summary: Example 1
+                  description: Response example for sumary transactions data
+          description: ''
   /api/v1/transactions/:
     get:
       operationId: transactions_list
@@ -86,6 +130,31 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedTransactionList'
           description: ''
+  /api/v1/transactions/{uuid}:
+    get:
+      operationId: transactions_retrieve
+      description: Returns the detail of a transaction. Works with the transaction's
+        id.
+      parameters:
+      - in: path
+        name: uuid
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - transactions
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+          description: ''
 components:
   schemas:
     Company:
@@ -103,6 +172,26 @@ components:
       required:
       - id
       - name
+    CompanyDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          pattern: ^[-a-zA-Z0-9_]+$
+        name:
+          type: string
+        status:
+          type: string
+        transactions:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties: {}
+      required:
+      - id
+      - name
+      - status
+      - transactions
     CompanyEstatusEnum:
       enum:
       - active
@@ -154,6 +243,44 @@ components:
       - reversed
       - pending
       type: string
+    Summary:
+      type: object
+      properties:
+        total_companies:
+          type: integer
+        total_transactions:
+          type: integer
+        paid_payments:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties: {}
+        less_paid_payments:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties: {}
+        rejected_payments:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties: {}
+        total_price_approved:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        total_price_non_approved:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - less_paid_payments
+      - paid_payments
+      - rejected_payments
+      - total_companies
+      - total_price_approved
+      - total_price_non_approved
+      - total_transactions
     Transaction:
       type: object
       properties:

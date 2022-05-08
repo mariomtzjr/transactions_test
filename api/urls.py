@@ -2,7 +2,7 @@ from django.urls import path
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
-from apps.transaction.views import TransactionsDetailViewSet, TransactionsListAPIView
+from apps.transaction.views import TransactionsDetailViewSet, TransactionsListAPIView, TransactionDetailAPIView
 from apps.company.views import CompaniesListAPIView, CompanyDetailAPIView
 
 
@@ -15,6 +15,7 @@ urlpatterns = [
 
     # Transactions list
     path('transactions/', TransactionsListAPIView.as_view(), name='transactions_list'),
+    path('transactions/<uuid:uuid>', TransactionDetailAPIView.as_view(), name='transaction_detail'),
 
     # Doenload API schema
     path('schema/', SpectacularAPIView.as_view(), name='schema'),

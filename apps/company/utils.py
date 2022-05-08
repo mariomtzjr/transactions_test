@@ -1,6 +1,24 @@
 from collections import Counter
 
 from apps.transaction.models import Transaction
+from apps.transaction.utils import OPEN_API_SUMARY_DATA_EXAMPLE
+
+OPEN_API_COMPANY_DATA_EXAMPLE = {
+    "id": "38e657b1-ea73-42d9-bc15-9d9c532fbc0e",
+    "name": "rappi",
+    "status": "active",
+    "transactions": {
+        "data": {
+            "paid_payments": 317,
+            "no_paid_payments": 247,
+            "max_transactions_data": {
+                "date": "2021-05-24",
+                "count": 32
+            }
+        },
+        "count": 564
+    }
+}
 
 
 def get_dates_from_instance(instance):

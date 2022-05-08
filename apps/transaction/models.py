@@ -17,7 +17,7 @@ class Transaction(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     company_id = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.DateField(default=timezone.now)
+    date = models.DateTimeField(default=timezone.now)
     status_transaction = models.CharField(
         max_length=20,
         choices=TRANSACTION_STATUS_CHOICES,
@@ -27,14 +27,13 @@ class Transaction(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.company_id.name
-    
-    def get_final_payment(self):
-        if self.status_transaction == 'closed' and self.status_approved == True:
-            self.final_payment = True
-        return self.final_payment
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['id'], name='unique_transaction_id')
+        ]
 
+    def __str__(self):
+        return str(self.id)
 
 
 class TransactionStatus(models.Model):

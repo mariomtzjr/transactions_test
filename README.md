@@ -79,9 +79,9 @@ En el documento anexo en el apartado de base de datos, se encuentra un archivo e
     - contact_type_name (string)
     - contact_type_value (string)
 
-**Methods**
-    - set_real_price: On Model ServicePriceCatalog to set the real price on every each transaction
-    - set_pk: On BaseModel to auto generate uuid value for id field. BaseModel extends over all models
+**Methods**  
+    - set_real_price: On Model ServicePriceCatalog to set the real price on every each transaction.  
+    - set_pk: On BaseModel to auto generate uuid value for id field. BaseModel extends over all models.  
 
 ### Diagrama Entidad-Relación
 ![Modelo Entidad Relacion](/data/plerk_test%20-%20DER.png)

@@ -120,6 +120,9 @@ We need to be into transactions_test repository/directory:
 ## API Doc
 Out server is running over `http://localhost:8000/`, so the API doc is available over this URL: `http://localhost:8000/api/v1/schema/redoc/`
 
+## Server on PythonAnyWhere
+URL: `https://mariomartinez.pythonanywhere.com/`
+
 ## Django Admin Site
 Current database contains a superuser to access to admin site, only you need to use the following credentials:  
 **`username: mariomartinez`**  

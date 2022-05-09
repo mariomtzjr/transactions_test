@@ -9,12 +9,28 @@ paths:
       operationId: companies_list
       description: Returns the list of companies showing its name and status.
       parameters:
+      - in: query
+        name: country_code
+        schema:
+          type: string
+        examples:
+          FilterByCountryCode:
+            value: MX
+            summary: Filter by country code
       - name: page
         required: false
         in: query
         description: A page number within the paginated result set.
         schema:
           type: integer
+      - in: query
+        name: zip_code
+        schema:
+          type: string
+        examples:
+          FilterByZipCode:
+            value: 09840
+            summary: Filter by zip_code
       tags:
       - companies
       security:
@@ -27,6 +43,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PaginatedCompanyList'
+              examples:
+                Example1:
+                  value:
+                    count: 123
+                    next: http://api.example.org/accounts/?page=4
+                    previous: http://api.example.org/accounts/?page=2
+                    results:
+                    - id: 38e657b1-ea73-42d9-bc15-9d9c532fbc0e
+                      name: rappi
+                      company_estatus: active
+                  summary: Example 1
+                  description: GET /api/v1/companies/?country_code=MX
+                Example2:
+                  value:
+                    count: 123
+                    next: http://api.example.org/accounts/?page=4
+                    previous: http://api.example.org/accounts/?page=2
+                    results:
+                    - id: 38e657b1-ea73-42d9-bc15-9d9c532fbc0e
+                      name: rappi
+                      company_estatus: active
+                  summary: Example 2
+                  description: GET /api/v1/companies/?zip_code=09840
+                Example3:
+                  value:
+                    count: 123
+                    next: http://api.example.org/accounts/?page=4
+                    previous: http://api.example.org/accounts/?page=2
+                    results:
+                    - id: 38e657b1-ea73-42d9-bc15-9d9c532fbc0e
+                      name: rappi
+                      company_estatus: active
+                  summary: Example 3
+                  description: GET /api/v1/companies/
           description: ''
   /api/v1/companies/{uuid}:
     get:
@@ -182,12 +232,24 @@ components:
           type: string
         status:
           type: string
+        address:
+          type: object
+          additionalProperties: {}
         transactions:
           type: object
           additionalProperties:
             type: object
             additionalProperties: {}
+        financial_data:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: object
+              additionalProperties: {}
       required:
+      - address
+      - financial_data
       - id
       - name
       - status

@@ -9,18 +9,18 @@ class CompanySerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'company_estatus']
 
 
-class TransactionDataSerializer(serializers.Serializer):
-    data = serializers.DictField(
-        child=serializers.DictField()
-    )
-
-
 class CompanyDetailSerializer(serializers.Serializer):
     id = serializers.SlugField()
     name = serializers.CharField()
     status = serializers.CharField()
+    address = serializers.DictField()
     transactions = serializers.DictField(
         child=serializers.DictField()
+    )
+    financial_data = serializers.DictField(
+        child=serializers.ListField(
+            child=serializers.DictField()
+        )
     )
 
 

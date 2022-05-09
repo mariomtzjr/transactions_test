@@ -7,6 +7,24 @@ OPEN_API_COMPANY_DATA_EXAMPLE = {
     "id": "38e657b1-ea73-42d9-bc15-9d9c532fbc0e",
     "name": "rappi",
     "status": "active",
+    "address": {
+        "street": "Cuauhtemoc",
+        "number": "324",
+        "colony": "Los Reyes",
+        "city": "CDMX",
+        "state": "Iztapalapa",
+        "country_code": "MX",
+        "zip_code": "09840"
+    },
+    "financial_data": {
+        "accounts": [
+            {
+                "clabe": "12345678911122234",
+                "account_number": "12345678",
+                "account_type": "Inversion"
+            }
+        ]
+    },
     "transactions": {
         "data": {
             "paid_payments": 317,
@@ -19,6 +37,14 @@ OPEN_API_COMPANY_DATA_EXAMPLE = {
         "count": 564
     }
 }
+
+COMPANY_DATA = [
+    {
+        "id": "38e657b1-ea73-42d9-bc15-9d9c532fbc0e",
+        "name": "rappi",
+        "company_estatus": "active"
+    }
+]
 
 
 def get_dates_from_instance(instance):
@@ -39,6 +65,24 @@ def build_instance_data(instance):
     instance_data["id"] = instance.id
     instance_data["name"] = instance.name
     instance_data["status"] = instance.company_estatus
+    instance_data["address"] = {
+        "street": instance.address.street or "",
+        "number": instance.address.number or "",
+        "colony": instance.address.colony or "",
+        "city": instance.address.city or "",
+        "state": instance.address.state or "",
+        "country_code": instance.address.country_code_id.country_code or "",
+        "zip_code": instance.address.zip_code or ""
+    }
+    instance_data["financial_data"] = {
+        "accounts": [
+            {
+                "clabe": account.clabe,
+                "account_number": account.account_number,
+                "account_type": account.account_type.type_name
+            }
+        ] for account in instance.account_set.all()
+    }
         
     instance_data["transactions"] = {"data": {}}
     instance_data["transactions"]["count"] = Transaction.objects.filter(company_id=instance.id).count()

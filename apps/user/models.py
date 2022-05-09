@@ -26,9 +26,6 @@ class BaseModel(models.Model):
 class UserType(BaseModel, models.Model):
     type_name = models.CharField(max_length=50)
 
-    def set_pk(self):
-        self.id = uuid.uuid4()
-
     def __str__(self):
         return self.type_name
 
@@ -36,9 +33,6 @@ class UserType(BaseModel, models.Model):
 class UserContactType(BaseModel, models.Model):
     contact_type_name = models.CharField(max_length=10, choices=USER_CONTACT_TYPE_CHOICES, default=None, null=True, blank=True)
     contact_type_value = models.CharField(max_length=50, default=None, null=True, blank=True)
-
-    def set_pk(self):
-        self.id = uuid.uuid4()
     
     def __str__(self):
         return self.contact_type_value

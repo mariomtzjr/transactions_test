@@ -12,9 +12,6 @@ class AccountType(BaseModel, models.Model):
 
     def __str__(self):
         return self.type_name
-        
-    def set_pk(self):
-        self.pk = uuid.uuid4()
 
 
 class Account(BaseModel, models.Model):

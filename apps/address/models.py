@@ -13,9 +13,6 @@ class CountryCode(BaseModel, models.Model):
     def __str__(self):
         return self.country_name
 
-    def set_pk(self):
-        self.pk = uuid.uuid4()
-
 
 class Address(BaseModel, models.Model):
     company_id = models.OneToOneField(Company, on_delete=models.SET_NULL, null=True)

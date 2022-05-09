@@ -24,6 +24,12 @@ En el documento anexo en el apartado de base de datos, se encuentra un archivo e
             - Sólo se deben cobrar aquellas combinaciones que sean:
                 - status_transaction = closed
                 - status_approved = true
+
+- ServicePriceCatalog:
+    - id (uuid)
+    - company_id (Foreign Key to Company)
+    - base_price (decimal)
+
 - Company:
     - Nombre
     - Status (activa/inactiva)
@@ -72,6 +78,10 @@ En el documento anexo en el apartado de base de datos, se encuentra un archivo e
     - id (uuid)
     - contact_type_name (string)
     - contact_type_value (string)
+
+**Methods**
+    - set_real_price: On Model ServicePriceCatalog to set the real price on every each transaction
+    - set_pk: On BaseModel to auto generate uuid value for id field. BaseModel extends over all models
 
 ### Diagrama Entidad-Relación
 ![Modelo Entidad Relacion](/data/plerk_test%20-%20DER.png)

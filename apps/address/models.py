@@ -3,7 +3,7 @@ import uuid
 from django.db import models
 
 from apps.user.models import BaseModel
-
+from apps.company.models import Company
 
 # Create your models here.
 class CountryCode(BaseModel, models.Model):
@@ -14,10 +14,11 @@ class CountryCode(BaseModel, models.Model):
         return self.country_name
 
     def set_pk(self):
-        self.pk = uuid.uuid4()[:8]
+        self.pk = uuid.uuid4()
 
 
 class Address(BaseModel, models.Model):
+    company_id = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True)
     street = models.CharField(max_length=100)
     number = models.CharField(max_length=10)
     colony = models.CharField(max_length=100, default=None, null=True, blank=True)

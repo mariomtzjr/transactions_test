@@ -12,8 +12,10 @@ USER_CONTACT_TYPE_CHOICES = [
 
 # Create your models here.
 class BaseModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=None, editable=False)
+
     def set_pk(self):
-        self.pk = uuid.uuid4()
+        self.id = uuid.uuid4()
 
     def save(self, *args, **kwargs):
         if self.pk is None:
@@ -25,7 +27,7 @@ class UserType(BaseModel, models.Model):
     type_name = models.CharField(max_length=50)
 
     def set_pk(self):
-        self.pk = uuid.uuid4()[:8]
+        self.id = uuid.uuid4()
 
     def __str__(self):
         return self.type_name
@@ -36,10 +38,10 @@ class UserContactType(BaseModel, models.Model):
     contact_type_value = models.CharField(max_length=50, default=None, null=True, blank=True)
 
     def set_pk(self):
-        self.pk = uuid.uuid4()[:8]
+        self.id = uuid.uuid4()
     
     def __str__(self):
-        return self.contact_value
+        return self.contact_type_value
 
 
 class CompanyUser(BaseModel, models.Model):

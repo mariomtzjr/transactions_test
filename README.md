@@ -120,4 +120,17 @@ We need to be into transactions_test repository/directory:
 ## API Doc
 Out server is running over `http://localhost:8000/`, so the API doc is available over this URL: `http://localhost:8000/api/v1/schema/redoc/`
 
+## Django Admin Site
+Current database contains a superuser to access to admin site, only you need to use the following credentials:  
+**`username: mariomartinez`**  
+**`password: test1234`**  
+
+### Steps to create a new superuser
+We need to be into transactions_test repository/directory: 
+1. `python manage.py createsuperuser`  
+2. `Set username or press enter to use default`  
+3. `Enter a valid email`  
+4. `Set password`
+5. `Confirm password`
+6. `Typing y confirm password`
 

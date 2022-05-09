@@ -13,6 +13,9 @@ COMPANY_STATUS_CHOICES = [
 class Company(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=100, unique=True)
+    company_rfc = models.CharField(max_length=20, unique=True, null=True, blank=True)
+    company_phone = models.CharField(max_length=20, null=True, blank=True)
+    company_email = models.EmailField(max_length=100, null=True, blank=True)
     company_estatus = models.CharField(
         max_length=20,
         choices=COMPANY_STATUS_CHOICES,

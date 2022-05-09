@@ -1,0 +1,734 @@
+{
+	"info": {
+		"_postman_id": "25bf2ed2-0244-4dfc-9098-198eb8042151",
+		"name": "plerk_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "get_transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/transactions/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_transactions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/transactions/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 08 May 2022 05:32:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4640"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 2654,\n    \"next\": \"http://localhost:8000/api/v1/transactions/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"eab022d8-9fe1-4b46-bf06-d435b7107117\",\n            \"company_id\": \"3daa95d7-6ac7-42ee-a9bc-5b548494a928\",\n            \"price\": \"50.00\",\n            \"date\": \"2021-01-09T18:45:56.419962Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": false,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"b6bc96e8-6bc2-4412-ac7f-1b04c1063c77\",\n            \"company_id\": \"80ed3ffa-5ae0-4e23-bdd0-300a31c7264b\",\n            \"price\": \"0.00\",\n            \"date\": \"2021-02-09T21:19:39.254770Z\",\n            \"status_transaction\": \"reversed\",\n            \"status_approved\": true,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"e576111a-da04-4699-bcb5-f76b8dc053fb\",\n            \"company_id\": \"3375b4d9-66e0-495c-bf73-b20c9465a1cb\",\n            \"price\": \"0.00\",\n            \"date\": \"2021-02-13T23:14:34.314141Z\",\n            \"status_transaction\": \"reversed\",\n            \"status_approved\": true,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"33f1880a-6adf-4449-953c-8482623f3035\",\n            \"company_id\": \"38e657b1-ea73-42d9-bc15-9d9c532fbc0e\",\n            \"price\": \"2948.00\",\n            \"date\": \"2021-04-28T17:46:33.897524Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": false,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"2b3a5317-22e2-4fd5-97e1-65452939590b\",\n            \"company_id\": \"283d83c1-c5b5-4928-a84b-0ed7ebc5eabb\",\n            \"price\": \"0.00\",\n            \"date\": \"2021-03-08T03:26:59.255798Z\",\n            \"status_transaction\": \"reversed\",\n            \"status_approved\": true,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"7b633114-26c6-4a33-bab8-0549d16fec45\",\n            \"company_id\": \"38e657b1-ea73-42d9-bc15-9d9c532fbc0e\",\n            \"price\": \"1813.00\",\n            \"date\": \"2021-03-06T17:46:01.720959Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"2e25127b-0c1c-4d38-a765-4a1473c2662f\",\n            \"company_id\": \"5c50df8e-f787-469d-9c20-120b67e3a3ea\",\n            \"price\": \"1000.00\",\n            \"date\": \"2021-03-15T14:30:55.139187Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"e1abc727-bd18-4399-a637-c3077a423904\",\n            \"company_id\": \"d3befac5-1f17-4ece-936b-cbbb9443bf32\",\n            \"price\": \"2912.00\",\n            \"date\": \"2021-03-13T00:52:46.764254Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"8236bf30-8af6-4ef9-9de3-0459935d1aa5\",\n            \"company_id\": \"ebc4b915-38e1-4978-b2b3-04388349d6b8\",\n            \"price\": \"953.00\",\n            \"date\": \"2021-03-13T22:26:22.160830Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"1ec5337a-9e71-46c3-9370-32ac77cdff22\",\n            \"company_id\": \"42c2f059-79f6-4b42-9f13-7230022dd5bb\",\n            \"price\": \"1701.00\",\n            \"date\": \"2021-03-24T20:03:11.337199Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"ced2c5d2-d8ad-4754-8385-c9a67c8bedf2\",\n            \"company_id\": \"990763e8-81b3-4e7f-895c-d11132960678\",\n            \"price\": \"3000.00\",\n            \"date\": \"2021-03-26T00:45:56.604044Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"63a96e72-8266-4220-83d9-eec734fb4eaf\",\n            \"company_id\": \"42c2f059-79f6-4b42-9f13-7230022dd5bb\",\n            \"price\": \"0.00\",\n            \"date\": \"2021-03-22T06:03:16.984830Z\",\n            \"status_transaction\": \"reversed\",\n            \"status_approved\": true,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"77851540-e947-4752-b4a0-7e92d06deac8\",\n            \"company_id\": \"ab31b8aa-9da4-45ce-8dbb-91911922298f\",\n            \"price\": \"1409.00\",\n            \"date\": \"2021-04-08T03:23:16.689318Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"92a01984-3741-4c31-a1dd-2787800dabfe\",\n            \"company_id\": \"a22b2675-265e-4048-9c32-e36b7dca45b0\",\n            \"price\": \"875.00\",\n            \"date\": \"2021-04-03T21:20:51.924988Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"4b23558d-5683-46ed-911e-afce7c752761\",\n            \"company_id\": \"38e657b1-ea73-42d9-bc15-9d9c532fbc0e\",\n            \"price\": \"0.00\",\n            \"date\": \"2021-03-10T20:58:04.285411Z\",\n            \"status_transaction\": \"reversed\",\n            \"status_approved\": true,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"0f660ab7-15fe-44a9-b629-98a9acf6592e\",\n            \"company_id\": \"b3fd5ac7-a24b-42a0-b577-b4b57b33bdb8\",\n            \"price\": \"656.00\",\n            \"date\": \"2021-05-13T18:14:06.847343Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": false,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"e08e6a32-6607-4663-b61a-8479d25c6825\",\n            \"company_id\": \"3daa95d7-6ac7-42ee-a9bc-5b548494a928\",\n            \"price\": \"9.00\",\n            \"date\": \"2021-01-09T19:25:45.427303Z\",\n            \"status_transaction\": \"reversed\",\n            \"status_approved\": true,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"715f064c-1849-41bf-89a7-d412f8c7b534\",\n            \"company_id\": \"80ed3ffa-5ae0-4e23-bdd0-300a31c7264b\",\n            \"price\": \"618.00\",\n            \"date\": \"2021-02-09T21:20:15.660718Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        },\n        {\n            \"id\": \"46e57129-0534-4224-9711-88a437d91334\",\n            \"company_id\": \"ebc4b915-38e1-4978-b2b3-04388349d6b8\",\n            \"price\": \"0.00\",\n            \"date\": \"2021-03-05T22:29:25.569575Z\",\n            \"status_transaction\": \"reversed\",\n            \"status_approved\": true,\n            \"final_payment\": false\n        },\n        {\n            \"id\": \"afbd52fe-2c9c-4d6d-a905-4604d164ebe7\",\n            \"company_id\": \"cbeae108-a403-44c1-b1e4-a075eca93ee8\",\n            \"price\": \"999.00\",\n            \"date\": \"2021-02-18T15:13:09.254665Z\",\n            \"status_transaction\": \"closed\",\n            \"status_approved\": true,\n            \"final_payment\": true\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "get_company",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/companies/38e657b1-ea73-42d9-bc15-9d9c532fbc0e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"companies",
+								"38e657b1-ea73-42d9-bc15-9d9c532fbc0e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_company",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/companies/38e657b1-ea73-42d9-bc15-9d9c532fbc0e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies",
+										"38e657b1-ea73-42d9-bc15-9d9c532fbc0e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 09 May 2022 00:44:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "360"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"38e657b1-ea73-42d9-bc15-9d9c532fbc0e\",\n    \"name\": \"rappi\",\n    \"status\": \"active\",\n    \"address\": {\n        \"street\": \"Cuauhtemoc\",\n        \"number\": \"324\",\n        \"colony\": \"Los Reyes\",\n        \"city\": \"CDMX\",\n        \"state\": \"Iztapalapa\",\n        \"country_code\": \"MX\",\n        \"zip_code\": \"09840\"\n    },\n    \"transactions\": {\n        \"data\": {\n            \"paid_payments\": 317,\n            \"no_paid_payments\": 247,\n            \"max_transactions_data\": {\n                \"date\": \"2021-05-24\",\n                \"count\": 32\n            }\n        },\n        \"count\": 564\n    }\n}"
+						},
+						{
+							"name": "get_company_financial_data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/companies/38e657b1-ea73-42d9-bc15-9d9c532fbc0e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies",
+										"38e657b1-ea73-42d9-bc15-9d9c532fbc0e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 09 May 2022 00:48:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "477"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"38e657b1-ea73-42d9-bc15-9d9c532fbc0e\",\n    \"name\": \"rappi\",\n    \"status\": \"active\",\n    \"address\": {\n        \"street\": \"Cuauhtemoc\",\n        \"number\": \"324\",\n        \"colony\": \"Los Reyes\",\n        \"city\": \"CDMX\",\n        \"state\": \"Iztapalapa\",\n        \"country_code\": \"MX\",\n        \"zip_code\": \"09840\"\n    },\n    \"financial_data\": {\n        \"accounts\": [\n            {\n                \"clabe\": \"12345678911122234\",\n                \"account_number\": \"12345678\",\n                \"account_type\": \"Inversion\"\n            }\n        ]\n    },\n    \"transactions\": {\n        \"data\": {\n            \"paid_payments\": 317,\n            \"no_paid_payments\": 247,\n            \"max_transactions_data\": {\n                \"date\": \"2021-05-24\",\n                \"count\": 32\n            }\n        },\n        \"count\": 564\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get_n_companies_with_paid_payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/sumary/?top=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"sumary",
+								""
+							],
+							"query": [
+								{
+									"key": "top",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_n_companies_with_paid_payments",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/sumary/?top=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"sumary",
+										""
+									],
+									"query": [
+										{
+											"key": "top",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 08 May 2022 06:59:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"top_5_companies\": {\n        \"companies\": [\n            {\n                \"name\": \"rappi\",\n                \"paid_payments_number\": 317\n            },\n            {\n                \"name\": \"uber eats\",\n                \"paid_payments_number\": 199\n            },\n            {\n                \"name\": \"netflix\",\n                \"paid_payments_number\": 109\n            },\n            {\n                \"name\": \"amazon\",\n                \"paid_payments_number\": 76\n            },\n            {\n                \"name\": \"spotify\",\n                \"paid_payments_number\": 61\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get_companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/companies/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"companies",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get_companies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/companies/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 08 May 2022 19:40:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "14958"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"3daa95d7-6ac7-42ee-a9bc-5b548494a928\",\n        \"name\": \"didi food\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"80ed3ffa-5ae0-4e23-bdd0-300a31c7264b\",\n        \"name\": \"rappi prime\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"3375b4d9-66e0-495c-bf73-b20c9465a1cb\",\n        \"name\": \"blim\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"38e657b1-ea73-42d9-bc15-9d9c532fbc0e\",\n        \"name\": \"rappi\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"283d83c1-c5b5-4928-a84b-0ed7ebc5eabb\",\n        \"name\": \"google cloud\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"5c50df8e-f787-469d-9c20-120b67e3a3ea\",\n        \"name\": \"starbucks\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"d3befac5-1f17-4ece-936b-cbbb9443bf32\",\n        \"name\": \"telcel\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ebc4b915-38e1-4978-b2b3-04388349d6b8\",\n        \"name\": \"netflix\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"42c2f059-79f6-4b42-9f13-7230022dd5bb\",\n        \"name\": \"amazon\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"990763e8-81b3-4e7f-895c-d11132960678\",\n        \"name\": \"comisión federal de electricidad\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ab31b8aa-9da4-45ce-8dbb-91911922298f\",\n        \"name\": \"amazon prime\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"a22b2675-265e-4048-9c32-e36b7dca45b0\",\n        \"name\": \"mercado pago\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b3fd5ac7-a24b-42a0-b577-b4b57b33bdb8\",\n        \"name\": \"uber eats\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"cbeae108-a403-44c1-b1e4-a075eca93ee8\",\n        \"name\": \"spotify\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"bdfd143d-0140-4932-8b78-6b8d4753ef4c\",\n        \"name\": \"omgyes\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"32f9d116-7b3a-43dc-bc22-3a6f30b3c932\",\n        \"name\": \"headspace\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"2563d325-a6c5-4ea2-bc03-63df04a5a927\",\n        \"name\": \"uber\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"54365b65-0c95-4ea4-a159-1f1664da80d9\",\n        \"name\": \"audible\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"d6760750-8429-46fe-a7d8-e3a715c11b27\",\n        \"name\": \"youtube premium\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"6eaad1ff-6ff6-4a90-9568-4a4758d65069\",\n        \"name\": \"fpay\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"f84d9b04-c8cb-4938-94fd-c49ddfde0279\",\n        \"name\": \"verificacion ks\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"aeb96f51-2b2a-495a-aae1-5dcec007f709\",\n        \"name\": \"pedidos ya\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"e4859552-d3fc-4e3f-9397-79f44eb94dff\",\n        \"name\": \"dlocal\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"46c8d8b6-a843-44bd-bd55-d923c6a29c59\",\n        \"name\": \"staples\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"06ee2beb-dbd5-4933-b725-2a542a24ca23\",\n        \"name\": \"hbomax\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"043a0bb8-5fb5-411d-8b36-07a9a5806de6\",\n        \"name\": \"cabify\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"6e463542-b7d5-4e2d-882b-720fe2e53a84\",\n        \"name\": \"microsoft store\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"c1a98bcf-288f-41ff-8f49-67847b87766c\",\n        \"name\": \"telmex\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"6eef8d59-e5f2-4252-9979-9824f3c865d0\",\n        \"name\": \"d-local\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"fa049331-970d-43df-b418-a832244a2ef9\",\n        \"name\": \"plerk\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"7aa157dc-6fec-4a96-96b6-470ca56880b0\",\n        \"name\": \"revolut\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ccfa582b-69e6-4a11-9013-35d645351229\",\n        \"name\": \"paddle\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"585ad13c-5b22-4f9e-9f73-a4a059524a78\",\n        \"name\": \"izzy internet\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"54550180-2f46-4cad-9b71-75199b826e2c\",\n        \"name\": \"tinder\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"812dafdc-b57e-4dca-a786-2d6c9eee7cb5\",\n        \"name\": \"pedidosya\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"94d192f8-a8f7-4aad-8cef-6859e926b82f\",\n        \"name\": \"mercado libre\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"3929f398-487f-4a21-8124-9d42e219aac3\",\n        \"name\": \"kushki\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"65683643-21fb-4666-83b6-751bc847406a\",\n        \"name\": \"hbo max\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"bf548fd4-b6ea-432e-89cf-64b31d67cbd9\",\n        \"name\": \"aliexpress\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"c2fa2645-df7e-41f9-a406-817666b59dfb\",\n        \"name\": \"paramount pluss\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"2083f6e8-826c-4475-9edd-5fc8a69a2818\",\n        \"name\": \"playstation network\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ba687cf5-f708-4db2-b707-851df3439064\",\n        \"name\": \"zwift\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"275f0559-1d65-4872-83ae-bd44c9fb4d1a\",\n        \"name\": \"domino's pizza\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"1fa708db-1fbf-486b-81d4-d6727c0d59c5\",\n        \"name\": \"sodimac\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ce6af2dc-8ef0-456c-936a-1c5e15e8425b\",\n        \"name\": \"les mills media\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"9d714a4d-a808-4bd4-931b-e08321fb4e9d\",\n        \"name\": \"mubi\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"bf4dcfdb-4190-4cf1-821d-c79babf07eb7\",\n        \"name\": \"disney+\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ef06f1af-5093-463d-9bcc-ea9930f05ed1\",\n        \"name\": \"adobe\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"69c7b6e1-47a2-4212-9053-0e98eb473ca0\",\n        \"name\": \"itch io game store\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b949dd35-85e6-47ef-820f-2349d6c64898\",\n        \"name\": \"square enix\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"6d8251ba-2c48-4beb-8b57-4b899b3c0322\",\n        \"name\": \"gaia\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"0bdb0afb-e074-41f1-9b98-aef8e2f58b7d\",\n        \"name\": \"paypal\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"2f3d7268-ad26-4235-aa09-6b29d4b64aba\",\n        \"name\": \"domestika\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"33be62ff-09b8-4f38-9f2c-5d0ff7ea3dc9\",\n        \"name\": \"didi\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"043b8c39-33f0-4111-b9b5-fe512eb66fc8\",\n        \"name\": \"sweat\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"c8453a05-9b4e-49d1-b0ce-2478b8bb2f8f\",\n        \"name\": \"vecat\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"f5a99e6d-9fb6-40ee-80c8-1dbb25eace42\",\n        \"name\": \"new york times\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"eaa8f4de-9e83-4e4f-bea5-7f71155cefc7\",\n        \"name\": \"ecobici\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ecdafcbf-c2bd-4f1a-9678-1642d3ffbc3e\",\n        \"name\": \"jfc electronica\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"a027fff8-d8f9-4a4f-b802-d0c470ddfc51\",\n        \"name\": \"coursera\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"c190d297-297d-49e9-8834-86f532da0148\",\n        \"name\": \"riot games\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"a40ab5c9-ccc7-4447-af27-15d424f5eacb\",\n        \"name\": \"experian\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"71783316-e903-4de6-b86c-ad8b659e3ac1\",\n        \"name\": \"weex\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b0dcb7a2-d1c5-4af5-8c73-58e251caf4d2\",\n        \"name\": \"libertech\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"569c464a-de1c-4562-a892-9b7a40db1391\",\n        \"name\": \"apple\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"f5bc4fe6-d3be-418f-9e04-8be96c374fbb\",\n        \"name\": \"nintendo eshop\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"a97e2ad1-40a7-4925-9069-928783df13e8\",\n        \"name\": \"infinitum\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ed939c18-6ff1-4e38-a968-21eddd80e37f\",\n        \"name\": \"dropbox\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"57bbca00-7bd0-4924-9cbd-e43a607a3403\",\n        \"name\": \"dx electrónica\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"7b310eb5-c7c8-4b03-8b74-3deb444defa0\",\n        \"name\": \"bookmate\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"7df0bb4e-8876-435f-bfe7-8b220f1acf66\",\n        \"name\": \"walmart\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"e6d27cd5-477b-41aa-89ff-72743e72fe4c\",\n        \"name\": \"calm\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"2a8359a5-1583-4240-9f35-90075728e508\",\n        \"name\": \"apple music\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"30c329f5-1bb4-4e03-9183-5a4be1783f55\",\n        \"name\": \"podomatic\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ac213a0b-2f17-498b-885d-8400b60b894f\",\n        \"name\": \"kindle unlimited\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"e51c0d28-75db-473b-94eb-e16cdf344449\",\n        \"name\": \"supercell videogame\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"1418dffd-b39b-4611-a30c-1b2c87f99495\",\n        \"name\": \"microsoft\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"4e77b6f9-2189-406c-b4c7-393dafc10401\",\n        \"name\": \"the new york times\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"cb270086-b85b-4bea-b11d-0c565cd36ec3\",\n        \"name\": \"appbar\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"8aa11ed1-538c-4411-ae51-1806e6031299\",\n        \"name\": \"izzi internet\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"4d62080d-5619-4d27-b7e5-8145be077642\",\n        \"name\": \"pgsharp\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"23fef959-67aa-4f46-b9eb-87f6db4c4ce9\",\n        \"name\": \"humblebundle\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"75d14096-5533-4adb-84f1-a43f104c7afc\",\n        \"name\": \"tienda shopealo\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"c0ea20db-a6cc-414a-a9bd-51d79fe29c2e\",\n        \"name\": \"tacx\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b1574984-baaf-4ac8-8667-ac01159ee080\",\n        \"name\": \"beatride\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ead15f62-0bb6-48f6-964c-8a35a3d7bd98\",\n        \"name\": \"crehana\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"1217f400-aa54-41f8-9273-799065af8d4b\",\n        \"name\": \"feldroy\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"e75909c0-0091-4f5e-bbb5-49fe36015b0f\",\n        \"name\": \"expressvpn\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"7e74fc7d-8192-46d9-b875-93b3efd4f73a\",\n        \"name\": \"hulu\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"e89c8733-458c-4482-a564-f03f74dff0f6\",\n        \"name\": \"prime video\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"5b8694fd-e8b7-4c7d-9f77-b2231ff42dc1\",\n        \"name\": \"discord\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"34b61349-1f47-48d3-98bb-3e3f1564cbc0\",\n        \"name\": \"learn enough\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"3fc874c6-e513-4ae8-8704-1a6da7d1a14d\",\n        \"name\": \"fluentu\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"48e6ebae-866d-4fa6-9d71-a57fa04a99f9\",\n        \"name\": \"shein\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"6bc9a0e7-a6e9-4c0c-8a3f-716514699af1\",\n        \"name\": \"natacha oceane\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"9ef9dfd6-0647-4c93-bd45-b00e1d5226ac\",\n        \"name\": \"tecno eshop\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"9071862a-3603-4fd9-b285-a4a9da0733b6\",\n        \"name\": \"eventos globales\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"231e5121-8823-46c7-8c3a-5593dfe7a1b9\",\n        \"name\": \"total play\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b3b5a761-c123-44f5-8728-29fcac19d65f\",\n        \"name\": \"patreon\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"83cad25f-341d-4670-bd53-659baa148b71\",\n        \"name\": \"wikimedia\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"d354fb9a-ff6e-4a32-8e60-2115bc5059bd\",\n        \"name\": \"storytel\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"c5befe77-b48f-401b-b8c6-7603a9318527\",\n        \"name\": \"la planchetta\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"fb4828e9-e13d-4c03-9909-556e4975b50f\",\n        \"name\": \"linkedin\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"1b64490c-b92d-4b9e-8aad-ae82a3dc6c71\",\n        \"name\": \"binance\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"755616b3-08ae-4658-b746-7ad63df6614a\",\n        \"name\": \"amazon music\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"e282e4c7-1d1f-48e9-9d84-5f099daeb146\",\n        \"name\": \"digital ocean\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b28b8225-d2d0-4aab-bd5b-9b5b7903b25c\",\n        \"name\": \"openpay\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"fe652877-ad5a-4823-87f4-6a7691266d31\",\n        \"name\": \"frizata\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"46774fdc-f21a-4cfa-a93d-2c2fc8211ec1\",\n        \"name\": \"codecademy\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"d416f133-1d18-46ef-9f58-ef3b640b2c13\",\n        \"name\": \"bumble\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"a5d2102e-3d65-437b-aed4-7f25e5e9b974\",\n        \"name\": \"formula uno\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"03c32727-2847-4d42-b5ef-b0c9487d01cb\",\n        \"name\": \"supercell\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"767f48b9-e581-4553-9fde-ede516013538\",\n        \"name\": \"mundo manias\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ac2e0da4-5233-435e-ba31-d3bfe1bf4a1f\",\n        \"name\": \"ebay\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"1a9d3722-4f98-4238-aa6d-1b2db57d63b2\",\n        \"name\": \"edetsa\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"980127a7-3c10-459c-9585-939a46b0b8c1\",\n        \"name\": \"bien limpito\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"40ec9aa7-6401-4e59-b2fd-aaf1da3e0845\",\n        \"name\": \"vs3\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"5f5c7404-4506-446b-bd4b-f2c0280f71e7\",\n        \"name\": \"h&m\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"5e0ef153-a6f2-42e1-9127-7780e0c27927\",\n        \"name\": \"tuenti\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"4caa289f-66a0-496c-bd62-7382e9938bc5\",\n        \"name\": \"paramount+\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"3322e6d9-da7e-47b0-bd35-ffc00a5d9eb7\",\n        \"name\": \"cornershop\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"14026ea8-b2ba-4638-a40c-ac716a638557\",\n        \"name\": \"nordvpn\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"d5f3aa67-4534-4a8d-bcdc-b26ff391b5a2\",\n        \"name\": \"airbnb\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"6ed12418-21fa-4fed-b9d5-9c0c69d872d8\",\n        \"name\": \"google colaboratory\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"1442a50b-79c8-4274-8d6e-1bccf1914d61\",\n        \"name\": \"cfe\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"60db1502-8bd6-4728-b2a4-5ec905a62062\",\n        \"name\": \"metrogas cdmx\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"4e010c1b-98f3-489b-84c9-15d5b857daa9\",\n        \"name\": \"devoto electronics\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b009ee0d-6e08-4129-8656-6f12e7d2ad41\",\n        \"name\": \"monokai\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ccc3b03e-2f63-464e-af17-f0289284482f\",\n        \"name\": \"okboy\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"aa305d85-4253-4f0e-bd6f-3361d52d255e\",\n        \"name\": \"medium\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"46867ac8-af9b-460e-bd46-8d4c332bf0b9\",\n        \"name\": \"twitch\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"1f0dacaa-11a8-478c-b800-7f0bdaa5cf3e\",\n        \"name\": \"tulotero\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"82875525-8f40-4f1c-a833-9be13a52341a\",\n        \"name\": \"replit\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"93864bdc-31aa-46e4-ac92-8de3f2118c70\",\n        \"name\": \"maimag\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"d2b063eb-9cd7-4e5f-875d-5f4f55ac76a3\",\n        \"name\": \"penzu\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"d5b9777c-0b07-4da5-a33b-ea0052ed7bc2\",\n        \"name\": \"funfotos\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ca2a7e24-67f2-45f0-8f01-c8c444ae9393\",\n        \"name\": \"self growth plan\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"8df732c8-760a-4765-8bdb-1bb8137de258\",\n        \"name\": \"criterion channel\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"854cbca0-da07-4a11-857b-7f690b2744b0\",\n        \"name\": \"sublime\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"299d2c22-1828-4bf0-a8f9-5f36d0b2b51c\",\n        \"name\": \"fintual\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"1c39668d-bca7-43f6-b796-d01658ae7209\",\n        \"name\": \"down dog\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b8d76094-33c6-4b0a-b08c-8ad61abe3e18\",\n        \"name\": \"nadar de noche\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"2352a338-6e9a-4897-a07a-7e91d6ee4a4a\",\n        \"name\": \"talonro\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"8bea4dea-a4b4-45ff-bc98-b367001e8131\",\n        \"name\": \"ocho la super app\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"b9c14bf1-b5cc-4ab2-b3f3-6ab2c04d6180\",\n        \"name\": \"udemy\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"17b8a51d-4a27-45b8-84b5-cfd551e3ea79\",\n        \"name\": \"curiositystream\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"07dce789-0b0e-4750-a6ba-901d0a60e6c8\",\n        \"name\": \"wise\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"fcc52a5f-b13d-49b4-a80f-3e1ee44f1b64\",\n        \"name\": \"promarketlatino\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"f4a4bea1-0624-4fac-af7f-7e08f3022495\",\n        \"name\": \"minecraft\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"4900ff83-b738-45ce-8ba5-419b314ecb3c\",\n        \"name\": \"bandcamp\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"0e4e1ea5-6fa2-4efd-8223-97ac5c068b37\",\n        \"name\": \"estadiotnts\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"44a27e53-ae26-4a54-be3d-a14f4a5e80cf\",\n        \"name\": \"boardgamearena\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"d69d5d36-fcbd-43f4-9856-2838b5755ee3\",\n        \"name\": \"mercuryo\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"badacd59-74f4-4522-aad5-d552c653d926\",\n        \"name\": \"koroto\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"c714b61a-905e-4790-b859-4f450ecb1178\",\n        \"name\": \"blinks labs\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"4d32d608-21c4-4120-9499-8fce0018cd19\",\n        \"name\": \"universidad de chile\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"200597e9-30c7-40f0-ad21-51347e317dbb\",\n        \"name\": \"atresplayer premium\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"7e490fac-9e2c-4d73-b8fc-e01bf5cfeb91\",\n        \"name\": \"typeform\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"0a10895d-2ebc-4d5c-ab7e-c5c719046418\",\n        \"name\": \"youtube music\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"ef39a63b-31bf-4ac1-9bf9-231255d40019\",\n        \"name\": \"nespresso\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"5979375a-77ee-4f59-ad08-3bfb1ca51114\",\n        \"name\": \"ktronix\",\n        \"company_estatus\": \"active\"\n    },\n    {\n        \"id\": \"20a97441-7978-48cd-b965-60a5ffb0b035\",\n        \"name\": \"ddd yoga\",\n        \"company_estatus\": \"active\"\n    }\n]"
+						},
+						{
+							"name": "get_companies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/companies/?country_code=MX",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies",
+										""
+									],
+									"query": [
+										{
+											"key": "country_code",
+											"value": "MX"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 09 May 2022 01:06:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"38e657b1-ea73-42d9-bc15-9d9c532fbc0e\",\n        \"name\": \"rappi\",\n        \"company_estatus\": \"active\"\n    }\n]"
+						},
+						{
+							"name": "get_companies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/companies/?zip_code=09840",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"companies",
+										""
+									],
+									"query": [
+										{
+											"key": "zip_code",
+											"value": "09840"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 09 May 2022 01:08:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.8.9"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"38e657b1-ea73-42d9-bc15-9d9c532fbc0e\",\n        \"name\": \"rappi\",\n        \"company_estatus\": \"active\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sumary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/sumary/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"sumary",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "sumary",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/sumary/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"sumary",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 May 2022 17:39:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.9"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "261"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total_companies\": 162,\n    \"total_transactions\": 2654,\n    \"max_paid_payments\": {\n        \"company_name\": \"rappi\",\n        \"paid_payments_number\": 393\n    },\n    \"less_paid_payments\": {\n        \"company_name\": \"blim\",\n        \"paid_payments_number\": 1\n    },\n    \"total_price_approved\": 1923699,\n    \"total_price_no_approved\": 21619268\n}"
+				},
+				{
+					"name": "sumary",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/sumary/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"sumary",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 08 May 2022 18:27:51 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.9"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "420"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total_companies\": 162,\n    \"total_transactions\": 2654,\n    \"paid_payments\": {\n        \"max_paid_payments\": {\n            \"company_name\": \"rappi\",\n            \"paid_payments_number\": 317\n        },\n        \"count\": 1393\n    },\n    \"less_paid_payments\": {\n        \"company_name\": \"omgyes\",\n        \"paid_payments_number\": 1\n    },\n    \"rejected_payments\": {\n        \"max_rejected_transactions\": {\n            \"company_name\": \"uber eats\",\n            \"rejected_transactions_number\": 205\n        },\n        \"count\": 837\n    },\n    \"total_price_approved\": 1857116,\n    \"total_price_no_approved\": 21685851\n}"
+				}
+			]
+		}
+	]
+}

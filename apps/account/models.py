@@ -14,7 +14,7 @@ class AccountType(BaseModel, models.Model):
         return self.type_name
         
     def set_pk(self):
-        self.pk = uuid.uuid4().hex[:8]
+        self.pk = uuid.uuid4()
 
 
 class Account(BaseModel, models.Model):

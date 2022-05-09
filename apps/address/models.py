@@ -18,7 +18,7 @@ class CountryCode(BaseModel, models.Model):
 
 
 class Address(BaseModel, models.Model):
-    company_id = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True)
+    company_id = models.OneToOneField(Company, on_delete=models.SET_NULL, null=True)
     street = models.CharField(max_length=100)
     number = models.CharField(max_length=10)
     colony = models.CharField(max_length=100, default=None, null=True, blank=True)

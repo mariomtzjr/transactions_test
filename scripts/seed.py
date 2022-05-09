@@ -125,6 +125,25 @@ def populate_database_other_instances():
     )
 
 
+def populate_database_service_catalog():
+    print("Populating database with service catalog...")
+    print("Creating ServiceCatalog instance...")
+    from apps.transaction.models import ServicePriceCatalog
+
+    df = get_dataframe()
+
+    for row in df.itertuples():
+        uuid_id = uuid.uuid4()
+        try:
+            ServicePriceCatalog.objects.create(
+                id=uuid_id,
+                company_id=Company.objects.get(name=row.company),
+            )
+        except Exception as e:
+            print(e)
+            pass
+    
+
 def populate_database_companies():
     print("Populating database with companies...")
 

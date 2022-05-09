@@ -11,7 +11,7 @@ COMPANY_STATUS_CHOICES = [
 
 # Create your models here.
 class Company(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=100, unique=True)
     company_estatus = models.CharField(
         max_length=20,

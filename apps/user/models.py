@@ -12,7 +12,7 @@ USER_CONTACT_TYPE_CHOICES = [
 
 # Create your models here.
 class BaseModel(models.Model):
-    id = models.UUIDField(primary_key=True, default=None, editable=False)
+    id = models.UUIDField(primary_key=True, default=None)
 
     def set_pk(self):
         self.id = uuid.uuid4()
